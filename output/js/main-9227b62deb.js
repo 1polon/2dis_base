@@ -1,0 +1,1 @@
+function o(){console.log("asdf")}function o(){console.log("asdf")}function o(){console.log("asdf")}function o(){console.log("asdf")}function o(){console.log("asdf")}console.log(o()),console.log(o()),console.log(o());
