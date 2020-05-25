@@ -1,0 +1,22 @@
+{
+  "name": "2dis_base",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1polon/2dis_base.git"
+  },
+  "author": "Ponomarenko Viktor <ponomarenko.office@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1polon/2dis_base/issues"
+  },
+  "homepage": "https://github.com/1polon/2dis_base#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
