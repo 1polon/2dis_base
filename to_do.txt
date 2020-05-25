@@ -1,0 +1,5 @@
+1) base platform for 2dis.net
+    - create layout for all monitors
+    - write layout code
+    - files: index.html, style.css
+    - page must be fast and simply
