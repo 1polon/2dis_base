@@ -8,6 +8,7 @@ const del = require('del');
 const uglify = require("gulp-uglify");
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
+const connect = require('gulp-connect');
 
 function pack_js(){
     return src('./src/js/*.js')
@@ -22,6 +23,7 @@ function pack_js(){
             merge: true
         }))
         .pipe(dest('./'))
+        .pipe(connect.reload())
 };
 
 
@@ -39,6 +41,7 @@ function pack_css(){
             merge: true
         }))
         .pipe(dest('./'))
+        .pipe(connect.reload())
 };
 
 function del_output(){
@@ -58,7 +61,14 @@ function create_first (cb) {
     pack_css();
     pack_js();
     cb();
+};
+
+function start_server(){
+    connect.server({
+        root: './output',
+        livereload: true
+    })
 }
 
-exports.default =  series(del_output, create_first, watching);
+exports.default =  series(del_output, create_first, parallel(watching, start_server));
 exports.babel_js = pack_js;
