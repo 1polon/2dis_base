@@ -11,19 +11,23 @@ const babel = require('gulp-babel');
 const connect = require('gulp-connect');
 
 function pack_js(){
+    // delete folder for new file witch cache name
     del('./output/js/*.js')
     return src('./src/js/*.js')
         .pipe(babel())
         .pipe(concat('bundle.js'))
+        // add cache number
         .pipe(rev())
         .pipe(uglify({
             toplevel: true
         }))
         .pipe(dest('./output/js'))
+        //cache information
         .pipe(rev.manifest('./output/js/rev-manifest.json', {
             merge: true
         }))
         .pipe(dest('./'))
+        //reloading browser if file change
         .pipe(connect.reload())
 };
 
