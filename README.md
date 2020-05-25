@@ -12,3 +12,5 @@
 - gulp-rev -> add cache names for file
 - del -> delete folders and files
 - gulp-uglify -> uglify js
+- gulp-autoprefixer -> add browsers prefixes
+- gulp-postcss
