@@ -1,0 +1,1 @@
+"use strict";console.log("gh234i"),console.log("gh234i");var o="11111111111111111";console.log(o),console.log(o);

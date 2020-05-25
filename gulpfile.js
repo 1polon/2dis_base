@@ -11,6 +11,7 @@ const babel = require('gulp-babel');
 const connect = require('gulp-connect');
 
 function pack_js(){
+    del('./output/js/*.js')
     return src('./src/js/*.js')
         .pipe(babel())
         .pipe(concat('bundle.js'))
@@ -28,6 +29,7 @@ function pack_js(){
 
 
 function pack_css(){
+    del('./output/css/*.css')
     return src(['./src/css/*.css'])
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 2 versions'],
@@ -44,6 +46,12 @@ function pack_css(){
         .pipe(connect.reload())
 };
 
+// function del_js(){
+//     return (del('./output/js'))
+// }
+// function del_ccc(){
+//     return (del('./output/css'))
+// }
 function del_output(){
     return (del('./output'))
 };
@@ -53,7 +61,7 @@ function watching () {
         return pack_js();
     })
     watch('./src/css/**/*.*', function p_css () {
-        return pack_css();
+        return  pack_css();
     })
 };
 

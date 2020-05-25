@@ -13,5 +13,5 @@
 - del -> delete folders and files
 - gulp-uglify -> uglify js
 - gulp-autoprefixer -> add browsers prefixes
-- gulp-postcss
-- gulp-babel
+- gulp-babel -> es6 to es5
+- gulp-connect -> livereload server
