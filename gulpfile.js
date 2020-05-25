@@ -14,6 +14,9 @@ function pack_js(){
         .pipe(babel())
         .pipe(concat('bundle.js'))
         .pipe(rev())
+        .pipe(uglify({
+            toplevel: true
+        }))
         .pipe(dest('./output/js'))
         .pipe(rev.manifest('./output/js/rev-manifest.json', {
             merge: true
