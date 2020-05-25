@@ -1,4 +1,6 @@
+"use strict";
+
 // console.log('ghi')
 // console.log('ghi')
 console.log('ghi');
-let sdfh = '';
+var sdfh = '';

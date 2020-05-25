@@ -5,15 +5,14 @@ const cleanCSS = require('gulp-clean-css');
 const minify = require('gulp-minify');
 const rev = require('gulp-rev');
 const del = require('del');
-const uglify = require('gulp-uglify');
+const uglify = require("gulp-uglify");
 const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
 
 function pack_js(){
     return src('./src/js/*.js')
+        .pipe(babel())
         .pipe(concat('bundle.js'))
-        .pipe(uglify({
-            toplevel: true
-        }))
         .pipe(rev())
         .pipe(dest('./output/js'))
         .pipe(rev.manifest('./output/js/rev-manifest.json', {
@@ -44,10 +43,19 @@ function del_output(){
 };
 
 function watching () {
-    watch('./src/js/**/*.*', pack_js)
-    watch('./src/css/**/*.*', function (cb) {
-        pack_css();
+    watch('./src/js/**/*.*', function p_js () {
+        return pack_js();
     })
+    watch('./src/css/**/*.*', function p_css () {
+        return pack_css();
+    })
+};
+
+function create_first (cb) {
+    pack_css();
+    pack_js();
+    cb();
 }
 
-exports.default =  watching;
+exports.default =  series(del_output, create_first, watching);
+exports.babel_js = pack_js;
