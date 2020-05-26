@@ -366,6 +366,9 @@
 
 
 */
+
+@import './smart-grid.sass';
+
 @font-face {
     font-family: "Arame-Stencil";
     src: url('../static/fonts/Arame-Stencil.woff');
@@ -389,9 +392,7 @@
     align-items: center;
 
 
-    *{
-      color: red;
-    }
+
 }
 
 .wrapper__item_inner{
@@ -417,5 +418,5 @@
     
 }
 .wrapper__item_inner span {
-    
+  
 }
