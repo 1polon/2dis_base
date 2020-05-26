@@ -50,12 +50,6 @@ function pack_css(){
         .pipe(connect.reload())
 };
 
-// function del_js(){
-//     return (del('./output/js'))
-// }
-// function del_ccc(){
-//     return (del('./output/css'))
-// }
 function del_output(){
     return (del('./output'))
 };

@@ -15,3 +15,4 @@
 - gulp-autoprefixer -> add browsers prefixes
 - gulp-babel -> es6 to es5
 - gulp-connect -> livereload server
+- gulp-webp -> convert images to WebP
