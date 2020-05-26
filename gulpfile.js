@@ -9,6 +9,7 @@ const uglify = require("gulp-uglify");
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const connect = require('gulp-connect');
+const to_webp = require('gulp-webp');
 
 function pack_js(){
     // delete folder for new file witch cache name
@@ -51,7 +52,7 @@ function pack_css(){
 };
 
 function del_output(){
-    return (del('./output'))
+    return (del(['!./output/static', './output/js', './output/css', '*.html']))
 };
 
 function watching () {
@@ -74,7 +75,13 @@ function start_server(){
         root: './output',
         livereload: true
     })
+};
+
+function conwert_to_webp () {
+    return src('./src/static/*.*')
+        .pipe(to_webp())
+        .pipe(dest('./output/static'))
 }
 
 exports.default =  series(del_output, create_first, parallel(watching, start_server));
-exports.babel_js = pack_js;
+exports.conwert_to_webp = conwert_to_webp;
