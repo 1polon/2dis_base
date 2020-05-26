@@ -35,7 +35,7 @@ function pack_js(){
 
 function pack_css(){
     del('./output/css/*.css')
-    return src(['./src/css/vendors.css', './src/css/*.css'])
+    return src('./src/css/main.css')
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 2 versions'],
             cascade: false
