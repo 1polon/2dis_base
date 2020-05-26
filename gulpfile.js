@@ -54,7 +54,8 @@ function pack_css(){
 function pack_html () {
     return src('./src/index.html')
         .pipe(htmlmin({
-            collapseWhitespace: true
+            collapseWhitespace: true,
+            minifyJS: true
         }))
         .pipe(dest('./output'))
         .pipe(connect.reload())

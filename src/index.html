@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PF</title>
-    <script src=""></script>
     <script>
-        let request = new XMLHttpRequest();
+        var request = new XMLHttpRequest();
         request.open("GET", 'rev-manifest.json');
         request.responseType = 'json';
         request.send();
         request.onload = function() {
             var hash = request.response;
-            var bundle = '/js/' + hash['bundle.js'];
-            console.log(bundle)
+            var bundle = '/js/' + hash['bundle.js']; 
             var css = '/css/' + hash['style.css'];
 
                 var script = document.createElement('script');
@@ -24,7 +22,7 @@
                 link.rel = 'stylesheet';
                 link.href = css;
                 document.getElementsByTagName('head')[0].appendChild(link);
-        }
+        };
     </script>
 </head>
 <body>
