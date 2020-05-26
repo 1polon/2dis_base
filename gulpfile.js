@@ -10,6 +10,9 @@ const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const connect = require('gulp-connect');
 const to_webp = require('gulp-webp');
+const smart_grid = require('smart-grid');
+const sass = require('gulp-sass');
+
 
 function pack_js(){
     // delete folder for new file witch cache name
@@ -35,7 +38,8 @@ function pack_js(){
 
 function pack_css(){
     del('./output/css/*.css')
-    return src('./src/css/main.css')
+    return src('./src/css/main.scss')
+        .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 2 versions'],
             cascade: false
@@ -101,6 +105,11 @@ function copy_static_fonts () {
         .pipe(dest('./output/static/fonts'))
 }
 
+function create_smart_grid(){
+    return smart_grid();
+}
+
 exports.default =  series(del_output, create_first, parallel(watching, start_server));
 exports.conwert_to_webp = conwert_to_webp;
 exports.copy_fonts = copy_static_fonts;
+exports.create_grid = create_smart_grid;

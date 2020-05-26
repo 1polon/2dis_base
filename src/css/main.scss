@@ -387,6 +387,11 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
+
+
+    *{
+      color: red;
+    }
 }
 
 .wrapper__item_inner{

@@ -16,3 +16,4 @@
 - gulp-babel -> es6 to es5
 - gulp-connect -> livereload server
 - gulp-webp -> convert images to WebP
+- gulp-sass -> conwert scss to sass
