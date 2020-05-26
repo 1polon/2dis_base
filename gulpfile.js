@@ -24,7 +24,7 @@ function pack_js(){
         }))
         .pipe(dest('./output/js'))
         //cache information
-        .pipe(rev.manifest('./output/js/rev-manifest.json', {
+        .pipe(rev.manifest('./output/rev-manifest.json', {
             merge: true
         }))
         .pipe(dest('./'))
@@ -44,7 +44,7 @@ function pack_css(){
         .pipe(cleanCSS())
         .pipe(rev())
         .pipe(dest('./output/css'))
-        .pipe(rev.manifest('./output/css/rev-css-manifest.json', {
+        .pipe(rev.manifest('./output/rev-manifest.json', {
             merge: true
         }))
         .pipe(dest('./'))
@@ -61,7 +61,7 @@ function pack_html () {
 }
 
 function del_output(){
-    return (del(['!./output/static', './output/js', './output/css', '*.html']))
+    return (del(['!./output/static', './output/js', './output/css', './output/*.*', ]))
 };
 
 function watching () {
