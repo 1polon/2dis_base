@@ -17,3 +17,12 @@
 - gulp-connect -> livereload server
 - gulp-webp -> convert images to WebP
 - gulp-sass -> conwert scss to sass
+
+
+## alias
+
+- a = add .
+- l = log --oneline -n 10
+- c = commit -am
+- p = push
+- d = diff
