@@ -51,6 +51,15 @@ function pack_css(){
         .pipe(connect.reload())
 };
 
+function pack_html () {
+    return src('./src/index.html')
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(dest('./output'))
+        .pipe(connect.reload())
+}
+
 function del_output(){
     return (del(['!./output/static', './output/js', './output/css', '*.html']))
 };
@@ -62,11 +71,15 @@ function watching () {
     watch('./src/css/**/*.*', function p_css () {
         return  pack_css();
     })
+    watch('./src/*.*', function p_html () {
+        return pack_html();
+    })
 };
 
 function create_first (cb) {
     pack_css();
     pack_js();
+    pack_html();
     cb();
 };
 
