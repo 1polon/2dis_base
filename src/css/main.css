@@ -349,23 +349,68 @@
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+                                    Main style
+
+
+*/
+@font-face {
+    font-family: "Arame-Stencil";
+    src: url('../static/fonts/Arame-Stencil.woff');
+}
+
+#static_bg{
+    position: absolute;
+    width: 1980px;
+    height: 1080px;
+
+}
 .wrapper {
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center center;
     background-image: url(../static/bg_inner.webp);
-    background-size: 100%;
-};
-body{
-    color: white;
+    height: 100vh;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .wrapper__item_inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
     color: white;
     width: 250px;
     height: 250px;
-    display: block;
+    border: 5pt solid #003333;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    font-family:"Arame-Stencil" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 60pt;
+
+    
 }
-a{
-    color: turquoise;
-}
-body{
-    color: #000;
+.wrapper__item_inner span {
+    
 }

@@ -92,10 +92,15 @@ function start_server(){
 };
 
 function conwert_to_webp () {
-    return src('./src/static/*.*')
+    return src('./src/static/*.jpg')
         .pipe(to_webp())
         .pipe(dest('./output/static'))
+}
+function copy_static_fonts () {
+    return src('./src/static/fonts/*.*')
+        .pipe(dest('./output/static/fonts'))
 }
 
 exports.default =  series(del_output, create_first, parallel(watching, start_server));
 exports.conwert_to_webp = conwert_to_webp;
+exports.copy_fonts = copy_static_fonts;
