@@ -436,6 +436,6 @@
 
 // transformations
 
-// .wrapper__item_inner{
-//   // transform: rotate(20deg);
-// }
+.wrapper__item_inner:last-child{
+  transform: perspective(100vh) rotateX(20deg) rotateY(20deg);
+}

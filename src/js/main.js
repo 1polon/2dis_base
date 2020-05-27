@@ -15,7 +15,13 @@ console.log(wrapper__item_inner);
 
 wrapper__item_inner.addEventListener('mousemove', function(elem) {
         console.log(elem.clientX);
-        wrapper__item_inner.style.transform = String("rotate(" + elem.pageX +"deg)"); 
+        wrapper__item_inner.style.transform = String(
+            "perspective(100vh)"
+            + "rotateX(" + elem.pageY +"deg)"
+            + "rotateY(" + elem.pageX +"deg)"
+            
+            
+            ); 
     })
     
     function console_aaa(el) {
