@@ -416,6 +416,7 @@
     
     
     //font
+    text-decoration: none;
     color: white;
     font-family:"Arame-Stencil" !important;
     font-size:16px;font-style:normal;
@@ -423,7 +424,22 @@
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
     font-size: 60pt;
+
+    position: relative;
 } 
+
+.wrapper__item_inner_download {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 0px;
+  background-color: rgba(47, 0, 255, 0.041);
+  transition: 5s;
+}
+// .wrapper__item_inner:hover > .wrapper__item_inner_download{
+//   height: 100%;
+//   transition: 5s;
+// }
 
 @media screen and (max-width: 550px){
   .wrapper__item_inner{
@@ -436,6 +452,7 @@
 
 // transformations
 
-.wrapper__item_inner:last-child{
-  transform: perspective(100vh) rotateX(20deg) rotateY(20deg);
+.wrapper__item_inner:hover{
+  box-shadow: 0 9px 11px rgb(35, 255, 0);
+  color: rgb(255, 0, 0);
 }
