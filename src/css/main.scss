@@ -445,7 +445,8 @@
   .wrapper__item_inner{
     width: 200px;
     height: 24vh;
-    transform: rotate(20deg);
+    // transform: rotate(20deg);
+    transition: 0.5s;
   }
 }
 
@@ -461,3 +462,6 @@
   position: absolute;
   bottom: 0px;
 }
+
+
+

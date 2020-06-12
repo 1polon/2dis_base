@@ -11,8 +11,8 @@
         request.send();
         request.onload = function() {
             var hash = request.response;
-            var bundle = '/js/' + hash['bundle.js']; 
-            var css = '/css/' + hash['style.css'];
+            var bundle = 'js/' + hash['bundle.js']; 
+            var css = 'css/' + hash['style.css'];
 
                 var script = document.createElement('script');
                 script.src = bundle;
